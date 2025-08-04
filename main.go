@@ -2,6 +2,26 @@ package main
 
 import "fmt"
 
+func add(a int, b int)(int){
+		return a + b
+	}
+
+	func minus(a int, b int)(int){
+		if a > b {
+			return a - b
+		}else{
+			return b - a
+		}
+	}
+
+	func multiply(a int, b int)(int){
+		return a * b
+	}
+
+	func division(a int, b int)(float64){
+		return float64(a) / float64(b)
+	}
+
 func main() {
 	var arith int
 	var a int
@@ -15,12 +35,25 @@ func main() {
 	fmt.Scanln(&a)
 	fmt.Println("Second Number")
 	fmt.Scanln(&b)
-	
 
-	func add(a int, b int)(int){
-		return a + b
+	fmt.Println("The Ans is")
+
+
+	switch arith {
+			case 1:
+		ans := add(a,b)
+		fmt.Println(ans)
+
+	case 2:
+		ans := minus(a,b)
+		fmt.Println(ans)
+
+	case 3:
+		ans := multiply(a,b)
+		fmt.Println(ans)
+
+	case 4:
+		ans := division(a,b)
+		fmt.Println(ans)
 	}
-
-
-
 }
