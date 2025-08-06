@@ -26,51 +26,51 @@ func main() {
 	var b int
 
 	keepGoing := "y"
-	 for  keepGoing == "y" {
+	for keepGoing == "y" {
 
-	for{
+		for {
 
-		fmt.Println("👋 Hi there! Ready to do some quick math?")
-		fmt.Println("What arithmetic do you want to perform today?")
-		fmt.Println("{1 for Add} {2 for Subtract} {3 for Multiply} {4 for Division}?")
-		fmt.Scanln(&arith)
+			fmt.Println("👋 Hi there! Ready to do some quick math?")
+			fmt.Println("What arithmetic do you want to perform today?")
+			fmt.Println("{1 for Add} {2 for Subtract} {3 for Multiply} {4 for Division}?")
+			fmt.Scanln(&arith)
 
-		if arith >= 1 && arith <= 4 {
-			break
+			if arith >= 1 && arith <= 4 {
+				break
+			}
+			fmt.Println("Please enter a number between 1 and 4.")
 		}
-		fmt.Println("Please enter a number between 1 and 4.")
+
+		fmt.Println("input the two numbers you want to work with")
+		fmt.Println("First Number")
+		fmt.Scanln(&a)
+		fmt.Println("Second Number")
+		fmt.Scanln(&b)
+
+		fmt.Println("The Ans is")
+
+		switch arith {
+		case 1:
+			ans := add(a, b)
+			fmt.Println(ans)
+
+		case 2:
+			ans := minus(a, b)
+			fmt.Println(ans)
+
+		case 3:
+			ans := multiply(a, b)
+			fmt.Println(ans)
+
+		case 4:
+			ans := division(a, b)
+			fmt.Println(ans)
+
+		default:
+			fmt.Println("Enter a valid number")
+		}
+		fmt.Println("Do you want to perform another arithmetic?(y/n)")
+		fmt.Scanln(&keepGoing)
 	}
-	
-	fmt.Println("input the two numbers you want to work with")
-	fmt.Println("First Number")
-	fmt.Scanln(&a)
-	fmt.Println("Second Number")
-	fmt.Scanln(&b)
-
-	fmt.Println("The Ans is")
-
-	switch arith {
-	case 1:
-		ans := add(a, b)
-		fmt.Println(ans)
-
-	case 2:
-		ans := minus(a, b)
-		fmt.Println(ans)
-
-	case 3:
-		ans := multiply(a, b)
-		fmt.Println(ans)
-
-	case 4:
-		ans := division(a, b)
-		fmt.Println(ans)
-
-	default:
-		fmt.Println("Enter a valid number")
-	}
-	fmt.Println("Do you want to perform another arithmetic?(y/n)")
-	fmt.Scanln(&keepGoing)
-}
 
 }
